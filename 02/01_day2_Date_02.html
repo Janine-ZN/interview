@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<span></span>
+<br>
+<span></span>
+<div></div>
+<!-- 用HTML网页形式写
+    var 一个变量存放字符串
+ （1）查询特定的字符串获取它所有下标，然后打印在控制台上，用逗号分隔，并将其用span标签打印在html网页中
+ （2）计算整个for循环的时间（提示：console.time）——超纲
+ （3）获取当前的时分秒，并将其放到另一个span标签打印在网页中（提示创建一个Date对象）
+ -->
+<script>
+    // 1. 获取span标签，是一个动态数组
+    var span = document.getElementsByTagName("span");
+    //==============================================================================//
+    // 2. 字符串变量
+    var str = "hello Date";
+    // 3. 定义一个空字符串用于存放分隔后的字符
+    var strs = "";
+    /************************for 循环********************************/
+    var start = new Date();
+    for(var i = 0 ; i < str.length ;i++){
+        // strs += str[i] + ",";
+        strs += str.charAt(i) + ",";    // str[i] 和 str.charAt(i) 都行
+        // 得到的 strs 最后一个字符是逗号
+    }
+    console.log(strs.slice(0,strs.length-1));// 输出strs：使用slice()方法截取从0~倒数一个数
+    var end = new Date();
+    span[0].innerHTML = end - start;// 将 for 循环执行的时间进行减法
+    /************************for 循环********************************/
+    //==============================================================================//
+    // 4. 获取当前的时分秒
+    var t = new Date();
+    var hour = t.getHours();
+    var minute = t.getMinutes();
+    var second = t.getSeconds();
+    span[1].innerHTML = hour + "时" + minute + "分" + second + "秒";// 7时52分56秒
+</script>
+
+</body>
+</html>

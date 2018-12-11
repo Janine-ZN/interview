@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!-- 下列这个 ul，如何点击每一个的时候 alert 其 index -->
+<ul id="ul">
+    <li>这是第一条</li>
+    <li>这是第二条</li>
+    <li>这是第三条</li>
+</ul>
+<script src="../js/jquery-3.3.1.js"></script>
+<script>
+    // 获取ul
+    var uls = document.getElementById("ul");
+    var ul_lis=uls.getElementsByTagName('li');
+    console.log(ul_lis);
+    for (var i = 0;i < ul_lis.length; i++) {
+        ul_lis[i].index = i;
+        ul_lis[i].onclick=function(){
+            var j = this.index+1;
+            alert(j);
+        }
+    }
+    
+    /*$('li').click(function () {
+        alert($(this).index());
+    })*/
+</script>
+</body>
+</html>
