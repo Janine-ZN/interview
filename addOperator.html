@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>加加运算符</title>
+</head>
+<body>
+<script>
+    var i = 1;
+    i++;    // i = 2
+    console.log(i);
+    var j = 1;
+    ++j;    // j = 2
+    console.log(j);
+
+    var a = 1;
+    // ++在变量后面先输出再计算
+    console.log(a++); // 1
+    var b = 1;
+    // ++在变量的前面先计算在输出
+    console.log(++b); // 2
+
+
+    var num = 1;
+    var n = num++;
+    var m = ++num;
+    console.log(n);// 1
+    console.log(m);// 3
+
+</script>
+
+</body>
+</html>
