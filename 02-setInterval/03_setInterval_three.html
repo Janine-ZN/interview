@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div {
+            width: 100px;
+            height: 100px;
+            /*background: red;*/
+        }
+    </style>
+</head>
+
+<body>
+    <div></div>
+    <script src="../js/jquery-3.3.1.js"></script>
+    <script>
+        // 颜色交替
+        func1();
+        function func1() {
+            $("div").css("background", "red");
+            setTimeout(func2, 1000);
+        }
+        function func2() {
+            $("div").css("background", "yellow");
+            setTimeout(func3, 1000);
+        }
+        function func3() {
+            $("div").css("background", "blue");
+            setTimeout(func1, 1000);
+        }
+
+    </script>
+</body>
+
+</html>
