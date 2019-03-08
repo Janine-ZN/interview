@@ -1,0 +1,21 @@
+<!-- 设置一个已知 ID 的 DIV 的 html 内容为 xxxx，字体颜色设置为黑色(不使用第三方框架) -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="box"></div>
+    <script>
+        var dom = document.getElementById("box");
+        dom.innerHTML = "在DIV中放上内容";
+        dom.style.color = "red";
+    </script>
+
+</body>
+
+</html>
