@@ -1,0 +1,12 @@
+html {
+    font-size: 100%;
+}
+
+body {
+    font-size: 1em;
+}
+
+#container {
+    width: 60em;
+    border: 1px solid #333;
+}
