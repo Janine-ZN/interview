@@ -1,0 +1,38 @@
+<!DOCTYPE html >
+<html lang='zh'>
+<head>
+<meta charset='UTF-8'/>
+<meta name='viewport' content='width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no'/>
+<meta http-equiv='X-UA-Compatible' content='ie=edge'/>
+<style>
+
+</style>
+<title>Document</title>
+</head>
+<body>
+        
+    <h1>解释一下在js里，0.1+0.2为什么等于0.30000000000000004</h1>
+    <h1>如何通过代码解决这个问题？</h1>
+
+
+    <h2>
+        在JavaScript中，所有的Number都是以64-bit的双精度浮点数存储的；
+        双精度的浮点数在这64位上划分为3段，而这3段也就确定了一个浮点数的值，64bit的划分是“1-11-52”的模式，具体来说：
+        1.就是1位最高位（最左边那一位）表示符号位，0表示正，1表示负；
+        2.11位表示指数部分；
+        3.52位表示尾数部分，也就是有效域部分
+    </h2>
+</body>
+
+<script>
+    var a = 0.1;
+    var b = 0.2;
+    console.log(a+b);
+    function add(a,b,pow){
+        console.log(a,b);
+        var number = Math.round((a+b)*Math.pow(10,pow))/Math.pow(10,pow);
+        return number
+    }
+    console.log(add(a,b,5)); 
+</script>
+</html>
