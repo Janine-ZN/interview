@@ -1,0 +1,80 @@
+<!DOCTYPE html >
+<html lang='zh'>
+<head>
+<meta charset='UTF-8'/>
+<meta name='viewport' content='width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no'/>
+<meta http-equiv='X-UA-Compatible' content='ie=edge'/>
+<title>元素垂直水平居中n+1种方法</title>
+
+<!-- 仅居中元素定宽高适用
+
+        absolute + 负margin
+        absolute + margin auto
+        absolute + calc
+
+        居中元素不定宽高
+
+        absolute + transform
+        lineheight
+        writing-mode
+        table
+        css-table
+        flex
+        grid -->
+<!-- 公共页面 -->
+        <!-- <div class="wp">
+            <div class="box size">123123</div>
+        </div> -->
+<style>
+
+    /* 公共代码 */
+    .wp {
+        border: 1px solid red;
+        width: 300px;
+        height: 300px;
+        margin: 200px auto;
+    }
+
+    .box {
+        background: green;    
+    }
+
+    .box.size{
+        width: 100px;
+        height: 100px;
+    }
+    /* 公共代码 */
+    /* 定位代码 */
+    /* 先将元素排列顺序垂直 剧中  子元素必须是行内块 行内元素*/
+    /* 将要水平垂直剧中的元素 在包裹一层元素 将原来垂直的排列循序校正回来 */
+    /* 垂直水平剧中的元素 设置auto  */
+.wp {
+    writing-mode: vertical-lr;
+    text-align: center;
+}
+.wp-inner {
+    writing-mode: horizontal-tb;
+    display: inline-block;
+    text-align: center;
+    width: 100%;
+}
+.box {
+    display: inline-block;
+    margin: auto;
+    text-align: left;
+}
+
+</style>
+</head>
+<body>
+    <div class="wp">
+        <div class="wp-inner">
+            <div class="box size">123123</div>
+        </div>
+    </div>
+</body>
+
+<script>
+
+</script>
+</html>

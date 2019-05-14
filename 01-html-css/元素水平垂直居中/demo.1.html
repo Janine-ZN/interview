@@ -1,0 +1,70 @@
+<!DOCTYPE html >
+<html lang='zh'>
+<head>
+<meta charset='UTF-8'/>
+<meta name='viewport' content='width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no'/>
+<meta http-equiv='X-UA-Compatible' content='ie=edge'/>
+<title>元素垂直水平居中n+1种方法</title>
+
+<!-- 仅居中元素定宽高适用
+
+        absolute + 负margin
+        absolute + margin auto
+        absolute + calc
+
+        居中元素不定宽高
+
+        absolute + transform
+        lineheight
+        writing-mode
+        table
+        css-table
+        flex
+        grid -->
+
+
+
+
+        <!-- PC端有兼容性要求，宽高固定，推荐absolute + 负margin
+        PC端有兼容要求，宽高不固定，推荐css-table
+        PC端无兼容性要求，推荐flex
+        移动端推荐使用flex -->
+
+
+<!-- 公共页面 -->
+        <!-- <div class="wp">
+            <div class="box size">123123</div>
+        </div> -->
+<style>
+
+    /* 公共代码 */
+    .wp {
+        border: 1px solid red;
+        width: 300px;
+        height: 300px;
+        margin: 200px auto;
+    }
+
+    .box {
+        background: green;    
+    }
+
+    .box.size{
+        width: 100px;
+        height: 100px;
+    }
+    /* 公共代码 */
+
+</style>
+</head>
+<body>
+    <div class="wp">
+        <div class="box size">123123</div>
+    </div>
+
+</body>
+
+<script>
+
+</script>
+</html>

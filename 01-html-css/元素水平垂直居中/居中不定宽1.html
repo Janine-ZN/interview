@@ -1,0 +1,60 @@
+<!DOCTYPE html >
+<html lang='zh'>
+<head>
+<meta charset='UTF-8'/>
+<meta name='viewport' content='width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no'/>
+<meta http-equiv='X-UA-Compatible' content='ie=edge'/>
+<title>元素垂直水平居中n+1种方法</title>
+
+<!-- 
+        居中元素不定宽高
+        absolute + transform
+        lineheight
+        writing-mode
+        table
+        css-table
+        flex
+        grid -->
+<!-- 公共页面 -->
+        <!-- <div class="wp">
+            <div class="box size">123123</div>
+        </div> -->
+<style>
+
+    /* 公共代码 */
+    .wp {
+        border: 1px solid red;
+        width: 300px;
+        height: 300px;
+        margin: 200px auto;
+    }
+
+    .box {
+        background: green;    
+    }
+
+    .box.size{
+        width: 100px;
+        height: 100px;
+    }
+    /* 公共代码 */
+    
+    /* 第一种方法 absolute + transform*//* 这种方法兼容性依赖translate2d的兼容性 */
+    /* .wp{position: relative;}
+    .box{position: absolute;left:50%;top:50%;transform: translate(-50% ,-50%); } */
+
+    /* 第二种方法 lineheight*//* vertical-align也可以在垂直方向做到居中  这种方法需要在子元素中将文字显示重置为想要的效果 */
+    .wp{text-align: center;line-height: 300px;font-size: 0}
+    .box{display: inline-block;line-height: normal;vertical-align: middle;text-align: left;font-size: 16px;}
+</style>
+</head>
+<body>
+    <div class="wp">
+        <div class="box size">123123</div>
+    </div>
+</body>
+
+<script>
+
+</script>
+</html>
