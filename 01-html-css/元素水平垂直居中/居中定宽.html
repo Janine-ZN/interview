@@ -1,0 +1,71 @@
+<!DOCTYPE html >
+<html lang='zh'>
+<head>
+<meta charset='UTF-8'/>
+<meta name='viewport' content='width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no'/>
+<meta http-equiv='X-UA-Compatible' content='ie=edge'/>
+<title>元素垂直水平居中1种方法</title>
+
+<!-- 仅居中元素定宽高适用
+
+        absolute + 负margin
+        absolute + margin auto
+        absolute + calc
+
+        居中元素不定宽高
+        absolute + transform
+        lineheight
+        writing-mode
+        table
+        css-table
+        flex
+        grid -->
+<!-- 公共页面 -->
+        <!-- <div class="wp">
+            <div class="box size">123123</div>
+        </div> -->
+<style>
+
+    /* 公共代码 */
+    .wp {
+        border: 1px solid red;
+        width: 300px;
+        height: 300px;
+        margin: 200px auto;
+    }
+
+    .box {
+        background: green;    
+    }
+
+    .box.size{
+        width: 100px;
+        height: 100px;
+    }
+    /* 公共代码 */
+    /* 第一种方法 absolute + 负margin */    /* 这是常用的方式，这种方式比较好理解，兼容性也很好，缺点是需要知道子元素的宽高 */
+    /* .wp{position: relative;}
+    .box{position: absolute;left:50%;top:50%;margin-left: -50px;margin-top:-50px; } */
+
+
+    /* 第二种absolute + margin auto *//* 这种方法兼容性也很好，缺点是需要知道子元素的宽高 */
+    /* .wp{position: relative;}
+    .box{position: absolute;left:0;top:0;right:0;bottom:0;margin: auto } */
+
+    
+    /* 第三中absolute + calc *//* 这种方法兼容性依赖calc的兼容性，缺点是需要知道子元素的宽高 */
+    /* calc()此CSS函数让你在声明CSS属性值时执行一些计算  https://developer.mozilla.org/zh-CN/docs/Web/CSS/calc  */
+    .wp{position: relative;}
+    .box{position: absolute;left:calc(50% - 50px);top: calc(50% - 50px) }/*运算符俩边必须含有空格(* /可以列外)*/
+</style>
+</head>
+<body>
+    <div class="wp">
+        <div class="box size">123123</div>
+    </div>
+</body>
+
+<script>
+
+</script>
+</html>
