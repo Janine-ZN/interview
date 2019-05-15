@@ -1,0 +1,53 @@
+<!DOCTYPE html >
+<html lang='zh'>
+<head>
+<meta charset='UTF-8'/>
+<meta name='viewport' content='width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no'/>
+<meta http-equiv='X-UA-Compatible' content='ie=edge'/>
+<style>
+
+</style>
+<title>Document</title>
+</head>
+<body>
+
+</body>
+
+<script>
+    window.onload = function(){
+        for (let i = 0; i < 10; i++) {
+            var a = document.createElement("a");
+            a.innerText = i;
+            document.body.appendChild(a)
+        }
+
+        var aList = document.querySelectorAll('a');
+        // 第一种 给a标签添加自定义属性 在获取这个属性
+        // for (var j = 0; j < aList.length; j++) {
+        //     aList[j].this = j;
+        //     aList[j].onclick= function (e){
+        //         console.log(this.this);
+        //     }
+        // }
+
+        // 第二种 使用let 生命变量
+        // for (let j = 0; j < aList.length; j++) {
+        //     aList[j].onclick= function (){
+        //         console.log(j);
+        //     }
+        // }
+        // 第三种 使用闭包
+        // 1.外层函数包裹内层函数 
+        // 2.内层函数引用外层函数变量
+        // 3.内容函数向外层函数return
+
+            for (var j = 0; j < aList.length; j++) {
+                aList[j].onclick= (function (j){
+                    return function(){
+                        console.log(j);
+                    }
+                })(j)
+            }
+        }
+</script>
+</html>
