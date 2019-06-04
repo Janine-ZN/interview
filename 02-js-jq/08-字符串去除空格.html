@@ -1,0 +1,45 @@
+<!DOCTYPE html >
+<html lang='zh'>
+<head>
+<meta charset='UTF-8'/>
+<meta name='viewport' content='width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no'/>
+<meta http-equiv='X-UA-Compatible' content='ie=edge'/>
+<style>
+
+</style>
+<title>Document</title>
+</head>
+<body>
+
+</body>
+
+<script>
+    var a = '  a  b  c  ';
+
+    function trim(str){
+		if(typeof str === 'string'){
+			var regStr = /\s+/g;
+			return str.replace(regStr,'');
+		}
+	}
+	
+	function trimArrayFilter(str){
+			var str = str.split(' ');
+			str.filter((element)=>{
+				return element != ' ';			
+			})
+			return str.join('');
+	}
+//	  function trimString(str) {
+//			if (!str || str.length <= 0 || (typeof str != 'string')) return false;
+//			let arr = str.split('');
+//			arr = arr.filter(item => {
+//			  return item != ' ';
+//			});
+//			return arr.join('');
+//	  }
+//		  console.log(trimString(str));
+
+	console.log(trimArrayFilter(a))
+</script>
+</html>
