@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>滑块验证</title>
+    <style>
+        .box {
+            width: 300px;
+            height: 30px;
+            background: #eee;
+            margin: 50px auto;
+            
+        }
+
+        .box .btn {
+            position: absolute;
+            width: 40px;
+            height: 30px;
+            border-radius: 5px;
+            text-align: center;
+            background: #ddd;
+            cursor: pointer
+        }
+
+        .box .text {
+            position: absolute;
+            top: 55px;
+            text-align: center;
+            margin-left:100px;
+        }
+
+        .box-bg {
+            background: green;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <!-- 滑块 -->
+        <div class="btn">&gt;&gt;</div>
+        <!-- 文字 -->
+        <div class="text">拖动滑块验证</div>
+        <!-- 背景 -->
+        <div class="bg"></div>
+    </div>
+
+    <script>
+        var btn =document.querySelector('.btn');
+        btn.addEventListener('mousedown',function(event) {
+            console.log(event.screenX);
+        })
+        btn.addEventListener('mousemove',function (event) {
+            console.log('移动');
+        })
+    </script>
+</body>
+
+</html>
