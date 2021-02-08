@@ -5,6 +5,8 @@
     当解析到link时，页面会同步加载所引的 css，而@import所引用的 css 会等到页面加载完才被加载；
     @import需要 IE5 以上才能使用；
     link可以使用 js 动态引入，@import不行；
+
+
 ### 二.JS中使用typeof 能得到哪些类型？
     var str = 'dsfakldj';   // string;
     var num = 123456;       // number;
@@ -13,7 +15,8 @@
     var obg = {};           // object;
     null                    // object;
     var fun  = function (){}// function; 
-### 三.4.JS如果获取计算后的样式？
+
+### 三.JS如果获取计算后的样式？
     1.使用jq
         $('id').css('width');
     2.原生js

@@ -1,5 +1,5 @@
-// 如何去除数组中的重复元素[1, 2, 2, 2, 3, 3, 3, 4, 5, 6]
-    var arr = [1, 2, 2, 2, 3, 3, 3, 4, 5, 6];
+// 如何去除数组中的重复元素[1, 3, 5, 2, 4, 3, 2, 3, 2, 6]
+var arr = [1, 3, 5, 2, 4, 3, 2, 3, 2, 6];
 //  es5四种方式:
 // 方式一:
 Array.prototype.unique_one = function () {
@@ -9,7 +9,7 @@ Array.prototype.unique_one = function () {
     for (var i = 0; i < this.length; i++) {
         // 3.如果当前数组的第i已经保存进了临时数组，
         // 那么跳过,否则把当前项push到临时数组里面
-        if (-1 === temp.indexOf(this[i])) {
+        if (temp.indexOf(this[i]) === -1) {
             temp.push(this[i]);
         }
     }
@@ -19,8 +19,9 @@ console.log("unique_one==>", arr.unique_one());
 
 // 方式二:
 Array.prototype.unique_two = function () {
-    //1. hash为hash表，r为临时数组
-    var hash = {}, temp = [];
+    //1. hash为hash表，temp为临时数组
+    var hash = {},
+        temp = [];
     // 2.遍历当前数组
     for (var i = 0; i < this.length; i++) {
         // 3. 如果hash表中没有当前项
@@ -62,6 +63,15 @@ Array.prototype.unique_four = function () {
 };
 console.log("unique_four==>", arr.unique_four());
 
+Array.prototype.unique_five = function () {
+
+    var res = this.filter((item, index) => {
+        return this.indexOf(item) === index;
+    })
+    return res;
+}
+console.log("unique_five==>", arr.unique_five());
+
 // es6实现方式:
 Array.prototype.unique = Array.prototype.unique || function () {
     return [...new Set(this)];
@@ -72,4 +82,4 @@ function fun1() {
     return set;
 }
 var result1 = fun1();
-console.log(arr.unique);
+console.log(result1);

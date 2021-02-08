@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>去除最后一个指定字符</title>
+ </head>
+ <body>
+  
+ </body>
+
+
+ <script>
+	var str = '我的世界'
+	/*
+	*
+	*/
+	function stringSclie(str,del){
+		if((!str && !del) || typeof str != 'string')return false
+		str =str.split('');
+		var i = str.lastIndexOf(del);
+		str.splice(i,1);
+//		console.log(str.lastIndexOf(del))
+		return str.join('');
+	}
+	console.log( stringSclie(str,'世'))
+
+ </script>
+</html>
